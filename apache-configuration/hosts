@@ -1,0 +1,5 @@
+added the host in the C:\Windows\System32\drivers\etc file
+
+127.0.0.1 localhost
+::1 localhost
+127.0.0.1 eight25-internship-assessment.test
