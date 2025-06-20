@@ -18,8 +18,8 @@ body {
 }
 
 .tech-stack {
-  background-color: white;
   position: relative;
+  background-color: white;
   overflow: hidden;
 }
 .tech-stack::before {
@@ -60,9 +60,9 @@ body {
 }
 
 .tech-icon {
+  position: absolute;
   width: 117px;
   height: 116px;
-  position: absolute;
   filter: grayscale(30%) opacity(0.8);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -101,7 +101,7 @@ body {
 .cta-button {
   padding: 0.75rem 1.5rem;
   background-color: #FF3366;
-  color: rgb(255, 255, 255);
+  color: #fff;
   border: none;
   border-radius: 0.375rem;
   font-weight: lighter;
@@ -127,14 +127,13 @@ body {
   pointer-events: none;
   position: relative;
   z-index: 2;
-  background: #e841e2;
-  background: linear-gradient(155deg, rgb(232, 65, 226) 0%, rgb(112, 10, 109) 54%, rgb(0, 89, 255) 70%, rgb(255, 255, 255) 89%);
   display: flex;
   flex-wrap: wrap;
+  background: linear-gradient(155deg, rgb(232, 65, 226) 0%, rgb(112, 10, 109) 54%, rgb(0, 89, 255) 70%, rgb(255, 255, 255) 89%);
 }
 
 .text-content {
-  color: rgb(255, 255, 255);
+  color: #fff;
   margin-left: 5rem;
   margin-top: 5rem;
   font-size: 2rem;
@@ -149,7 +148,7 @@ body {
 .trnc-button {
   padding: 0.75rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.329);
-  color: rgb(255, 255, 255);
+  color: #fff;
   border: none;
   border-radius: 0.375rem;
   font-weight: lighter;
@@ -164,9 +163,6 @@ body {
   height: 540px;
   margin: 0 auto;
   overflow: visible;
-  padding: 0rem;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 .phone-animation .phone-part {
   position: absolute;
@@ -175,11 +171,11 @@ body {
   transition: transform 1s ease, opacity 1s ease;
 }
 .phone-animation .bottom {
-  transform: translate(100px, -150%) rotate(0deg);
+  transform: translate(100px, -150%);
   z-index: 1;
 }
 .phone-animation .top {
-  transform: translate(-100px, 100%) rotate(0deg);
+  transform: translate(-100px, 100%);
   z-index: 2;
 }
 .phone-animation.visible .bottom {
@@ -249,8 +245,7 @@ body {
 }
 
 .slideshow-container {
-  margin-top: 12rem;
-  margin-bottom: 12rem;
+  margin: 12rem 0;
   width: 450px;
   height: 500px;
   border-radius: 1rem;
@@ -261,31 +256,26 @@ body {
 }
 @media (max-width: 957px) {
   .slideshow-container {
-    margin-left: 12rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 0 0 12rem;
   }
 }
 @media (max-width: 680px) {
   .slideshow-container {
     margin-left: 3.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
 .slideshow-container .mySlides {
   display: none;
 }
 .slideshow-container .mySlides.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  animation: fade 1.5s;
 }
 .slideshow-container .mySlides img {
   width: 100%;
   height: 100%;
   -o-object-fit: fill;
      object-fit: fill;
-  display: flexbox;
+  display: block;
 }
 .slideshow-container .numbertext {
   position: absolute;
@@ -324,8 +314,7 @@ body {
   }
 }
 .footer-section {
-  padding-top: 12rem;
-  padding-bottom: 13rem;
+  padding: 12rem 0 13rem;
   background: url("../assets/images/grid.png") no-repeat left center, url("../assets/images/grid (2).png") no-repeat top right, url("../assets/images/mask group 2.png") no-repeat center center/cover, linear-gradient(0deg, rgb(0, 28, 77) 29%, rgb(0, 94, 255) 70%, rgb(255, 255, 255) 100%);
   background-size: auto 100%, auto, cover, cover;
 }
@@ -374,16 +363,15 @@ body {
     padding-bottom: 2rem;
   }
   .text-content {
-    margin: -1rem;
+    margin: -1rem 0 0 -1rem;
     font-size: 1.4rem;
     text-align: center;
-    margin-top: -1rem;
   }
   .phone-animation {
     width: 300px;
     height: 400px;
     margin-left: -5rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
   .hero-slider {
     padding: 0 1rem;
@@ -405,7 +393,7 @@ body {
   }
   .slider-text {
     font-size: 1.2rem;
-    margin-top: 2rem;
+    margin: 2rem 0 0 0;
     margin-left: 0;
     text-align: center;
   }

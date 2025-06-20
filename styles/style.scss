@@ -11,31 +11,30 @@ $breakpoint: 960px;
   transition: transform $animation-duration ease-in-out;
 }
 
-// Base
+// Base styles
 body {
   background-color: white;
   font-family: 'DM Sans', system-ui, sans-serif;
 }
 
-// Layout
+// Layout container
 .showcase {
   position: relative;
-   z-index: 1;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr minmax(20ch, 50ch) 1fr;
   min-height: 100vh;
- 
+
   @media (max-width: $breakpoint) {
     grid-template-columns: 1fr;
     grid-template-rows: 2.5fr 5fr 2.5fr;
   }
 }
 
-// Tech stack columns
+// Section background
 .tech-stack {
- 
-  background-color: white;
   position: relative;
+  background-color: white;
   overflow: hidden;
 
   &::before {
@@ -50,7 +49,7 @@ body {
   }
 }
 
-// Center content
+// Centered content
 .content {
   padding: 1rem;
   text-align: center;
@@ -59,16 +58,15 @@ body {
   justify-content: center;
   align-items: center;
 
-  //nesting
   header {
-     font-size: 2.5rem;
-           }
+    font-size: 2.5rem;
+  }
 
-  h1{
+  h1 {
     margin-bottom: 1rem;
   }
 
-  p{
+  p {
     font-size: 1.5rem;
     font-weight: lighter;
     margin-bottom: 2rem;
@@ -79,14 +77,14 @@ body {
   }
 }
 
-// Floating icons
+// Floating tech icons
 .tech-icon {
+  position: absolute;
   width: 117px;
   height: 116px;
-  position: absolute;
   filter: grayscale(30%) opacity(0.8);
-  border-radius: 10px;             
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   will-change: transform;
   @include floating-animation;
 
@@ -95,7 +93,7 @@ body {
     transform: scale(1.2);
   }
 
-   @media (max-width: 1520px) {
+  @media (max-width: 1520px) {
     width: 90px;
     height: 90px;
   }
@@ -116,11 +114,11 @@ body {
   }
 }
 
-// Button
+// Call-to-action button
 .cta-button {
   padding: 0.75rem 1.5rem;
   background-color: $primary-color;
-  color: rgb(255, 255, 255);
+  color: #fff;
   border: none;
   border-radius: 0.375rem;
   font-weight: lighter;
@@ -148,58 +146,56 @@ body {
 
 
 
-
-
-
-//second block 
-.transition{
+// Section with background gradient and layered content
+.transition {
   pointer-events: none; // allow clicks to pass through
-   position: relative;
-    z-index: 2;
-  background: #e841e2;
-background: linear-gradient(155deg,rgba(232, 65, 226, 1) 0%, rgba(112, 10, 109, 1) 54%, rgba(0, 89, 255, 1) 70%, rgba(255, 255, 255, 1) 89%);
-  
-display: flex; 
-  flex-wrap: wrap; 
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+
+  background: linear-gradient(
+    155deg,
+    rgba(232, 65, 226, 1) 0%,
+    rgba(112, 10, 109, 1) 54%,
+    rgba(0, 89, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 89%
+  );
 }
 
-.text-content{
-  color: rgb(255, 255, 255);
+// Text content inside transition block
+.text-content {
+  color: #fff;
   margin-left: 5rem;
   margin-top: 5rem;
   font-size: 2rem;
 
-  @media (max-width:977px) {
+  @media (max-width: 977px) {
     font-size: 1.5rem;
     padding: 2rem;
   }
 }
 
-.trnc-button{
-  
- padding: 0.75rem 1.5rem;
+// Transparent styled button
+.trnc-button {
+  padding: 0.75rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.329);
-  color: rgb(255, 255, 255);
+  color: #fff;
   border: none;
   border-radius: 0.375rem;
   font-weight: lighter;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.2s;
-  }
+}
 
-
-  //the phones to appear from above and below
-  .phone-animation {
-  
+// Phone animation container and effect
+.phone-animation {
   position: relative;
   width: 400px;
   height: 540px;
   margin: 0 auto;
   overflow: visible;
-  padding: 0rem;
-  margin-top: 0;
-  margin-bottom: 0;
 
   .phone-part {
     position: absolute;
@@ -208,33 +204,31 @@ display: flex;
     transition: transform 1s ease, opacity 1s ease;
   }
 
+  // Starting position: move from top
   .bottom {
-    transform: translate(100px, -150%) rotate(0deg); // start above
+    transform: translate(100px, -150%);
     z-index: 1;
   }
 
+  // Starting position: move from bottom
   .top {
-    transform: translate(-100px, 100%) rotate(0deg); // start below
+    transform: translate(-100px, 100%);
     z-index: 2;
   }
 
+  // When visible, animate parts into place
   &.visible {
     .bottom {
-      transform: translate(100px, 0); // move down and slightly right
+      transform: translate(100px, 0);
       opacity: 1;
     }
 
     .top {
-      transform: translate(-100px, 100px); // move up and slightly left
+      transform: translate(-100px, 100px);
       opacity: 1;
     }
   }
 }
-
-
-
-
-
 
 
 
@@ -242,21 +236,23 @@ display: flex;
 
 
 //third block
+
+// Global box sizing
 * {
   box-sizing: border-box;
 }
 
-
+// Hero slider with layered background
 .hero-slider {
   background:
     url("../assets/images/Mask group.png") no-repeat left center,
-linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
-  background-size: auto 100%, cover; // image keeps height, gradient fills full area
+    linear-gradient(179deg, rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
+  background-size: auto 100%, cover;
   display: flex;
   gap: 1rem;
   padding-left: 5rem;
 
-   @media (max-width: 1450px) {
+  @media (max-width: 1450px) {
     flex-direction: row;
     justify-content: center;
     padding-left: 2rem;
@@ -300,44 +296,37 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
   }
 }
 
+// Slideshow image container
 .slideshow-container {
-  margin-top: 12rem;
-  margin-bottom: 12rem;
+  margin: 12rem 0;
   width: 450px;
   height: 500px;
   border-radius: 1rem;
   overflow: hidden;
   background: #fff;
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1);
- 
-   outline: 1rem solid rgba(0, 0, 0, 0.05);
+  outline: 1rem solid rgba(0, 0, 0, 0.05);
 
   @media (max-width: 957px) {
-    margin-left: 12rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 0 0 12rem;
   }
 
-    @media (max-width: 680px) {
+  @media (max-width: 680px) {
     margin-left: 3.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
-   
   .mySlides {
     display: none;
 
     &.fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
+      animation: fade 1.5s;
     }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: fill;
-      display: flexbox;
+      display: block;
     }
   }
 
@@ -348,16 +337,16 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
     color: #f2f2f2;
     font-size: 12px;
   }
-
 }
 
+// Slider accompanying text
 .slider-text {
   margin-left: 5rem;
   margin-top: 13rem;
   font-size: 2rem;
-   padding: 1rem;
+  padding: 1rem;
 
-    @media (max-width: 957px) {
+  @media (max-width: 957px) {
     text-align: center;
     margin-left: 0;
   }
@@ -369,12 +358,10 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
   p {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    //font-weight: lighter;
   }
-
 }
 
-
+// Fade animation for slides
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -389,73 +376,63 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
 
 
 
-
-
-
-//fourth block
-.footer-section{
- padding-top: 12rem;
-  padding-bottom: 13rem;
-
-
+// Footer Section Styling
+.footer-section {
+  padding: 12rem 0 13rem;
+  
+  // Background layers: grids, base image, gradient overlay
   background:
-    url("../assets/images/grid.png") no-repeat left center,                         // grid 1 on left center
-    url("../assets/images/grid (2).png") no-repeat top right,                      // grid 2 on top right
-    url("../assets/images/mask group 2.png") no-repeat center center / cover,      // base background image (fills full)
-    linear-gradient(0deg, rgba(0, 28, 77, 1) 29%, rgba(0, 94, 255, 1) 70%, rgba(255, 255, 255, 1) 100%); // optional overlay gradient
-
+    url("../assets/images/grid.png") no-repeat left center,
+    url("../assets/images/grid (2).png") no-repeat top right,
+    url("../assets/images/mask group 2.png") no-repeat center center / cover,
+    linear-gradient(0deg, rgba(0, 28, 77, 1) 29%, rgba(0, 94, 255, 1) 70%, rgba(255, 255, 255, 1) 100%);
+  
   background-size:
-    auto 100%,          // grid.png (left center) keeps full height
-    auto,               // grid (2).png keeps natural size
-    cover,              // mask group 2 fills entire area
-    cover; 
+    auto 100%, // grid.png full height
+    auto,      // grid (2).png natural size
+    cover,     // mask group 2 fills entire area
+    cover;
 
-    h1{
-      color: white;
-      font-size: 6rem;
-      justify-content: center;
-           }
-
-     button{
-       @media (max-width: $breakpoint) {
-    width: 170px;
-    font-size: 0.95rem;
+  h1 {
+    color: white;
+    font-size: 6rem;
+    justify-content: center;
   }
 
-     }    
-     
-     .text-area{
-      text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-     }
+  button {
+    @media (max-width: $breakpoint) {
+      width: 170px;
+      font-size: 0.95rem;
+    }
+  }
 
+  .text-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-
+// Scroll fade animations
 .fade-up, .fade-down {
   opacity: 0;
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
 .fade-up {
   transform: translateY(-250px);
 }
-
 .fade-down {
   transform: translateY(150px);
 }
-
 .visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-
+// Responsive styles for devices <= 768px width
 @media (max-width: 768px) {
-
   .transition {
     flex-direction: column;
     align-items: center;
@@ -464,17 +441,16 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
   }
 
   .text-content {
-    margin: -1rem;
+    margin: -1rem 0 0 -1rem;
     font-size: 1.4rem;
     text-align: center;
-    margin-top: -1rem;
   }
 
   .phone-animation {
     width: 300px;
     height: 400px;
     margin-left: -5rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   .hero-slider {
@@ -501,14 +477,13 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
 
   .slider-text {
     font-size: 1.2rem;
-    margin-top: 2rem;
+    margin: 2rem 0 0 0;
     margin-left: 0;
     text-align: center;
 
     h2 {
       font-size: 1.5rem;
     }
-
     p {
       font-size: 1.1rem;
     }
@@ -536,5 +511,4 @@ linear-gradient(179deg,rgba(50, 122, 237, 1) 0%, rgba(255, 255, 255, 1) 49%);
     width: 2rem;
     height: 2rem;
   }
-
 }
